@@ -4,6 +4,7 @@ import OrderFilters from '../../components/admin/orders/OrderFilters';
 import OrderTable from '../../components/admin/orders/OrderTable';
 import OrderDetailsModal from '../../components/admin/orders/OrderDetailModal';
 
+// Data ko thora expand kiya hai taake har tab check ho sake
 const demoOrders = [
     { id: "#ORD-7712", date: "Oct 24, 2023", customer: "Ali Khan", email: "ali@example.com", amount: 155.00, status: "Processing", items: [{ name: "RC Super Car", price: 45, qty: 1, image: "https://images.unsplash.com/photo-1594787330447-234b9623ffd0?w=100" }, { name: "Lego Castle", price: 110, qty: 1, image: "https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?w=100" }] },
     { id: "#ORD-7713", date: "Oct 23, 2023", customer: "Sara Ahmed", email: "sara@test.com", amount: 45.00, status: "Delivered", items: [{ name: "Teddy Bear", price: 45, qty: 1, image: "https://images.unsplash.com/photo-1559440666-3744d4422957?w=100" }] },
@@ -23,8 +24,15 @@ const AdminOrders = () => {
                 <p className="text-slate-400 text-sm font-medium mt-1">Check and manage all store transactions and deliveries.</p>
             </div>
 
+            {/* Step 1: Filters ko activeTab aur setter pass kiya */}
             <OrderFilters activeTab={activeTab} setActiveTab={setActiveTab} />
-            <OrderTable orders={demoOrders} onViewDetails={(order) => setSelectedOrder(order)} />
+
+            {/* Step 2: YAHAN ISSUE THA - activeTab pass karna lazmi hai */}
+            <OrderTable
+                orders={demoOrders}
+                activeTab={activeTab} // Ye line add ki hai
+                onViewDetails={(order) => setSelectedOrder(order)}
+            />
 
             <OrderDetailsModal order={selectedOrder} onClose={() => setSelectedOrder(null)} />
         </div>
