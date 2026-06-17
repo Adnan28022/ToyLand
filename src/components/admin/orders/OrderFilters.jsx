@@ -15,7 +15,7 @@ const OrderFilters = ({ activeTab, setActiveTab }) => {
                                 key={tab}
                                 onClick={() => setActiveTab(tab)}
                                 className={`px-5 sm:px-6 py-2.5 rounded-[1.4rem] text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap cursor-pointer ${activeTab === tab
-                                    ? 'bg-slate-900 text-white shadow-lg'
+                                    ? 'bg-blue-600 text-white shadow-lg'
                                     : 'text-slate-400 hover:text-slate-600'
                                     }`}
                             >

@@ -110,7 +110,7 @@ const OrderTable = ({ orders, onViewDetails, activeTab }) => {
                         <div className="flex gap-2">
                             <button
                                 onClick={() => onViewDetails(order)}
-                                className="flex-1 bg-slate-900 text-white py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-2"
+                                className="flex-1 bg-blue-600 text-white py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-2"
                             >
                                 <Eye size={16} /> Details
                             </button>
